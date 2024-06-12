@@ -40,6 +40,7 @@ class Banco
                         System.out.println("Digite a sua senha");
                         String senha = ler.next();
 
+
                         if (listaContas[aux].senha.equals(senha))
                         {
                             System.out.println("O que você deseja fazer?");
