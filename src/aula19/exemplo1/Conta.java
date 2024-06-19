@@ -1,4 +1,4 @@
-package exemplos.exemplo1;
+package aula19.exemplo1;
 import java.util.Scanner;
 import java.util.Random;
 
@@ -6,7 +6,7 @@ import java.util.Random;
 class Conta {
     Scanner ler = new Scanner(System.in);
     String titular;
-String senha;
+    String senha;
     String identificador;
     float saldo;
 

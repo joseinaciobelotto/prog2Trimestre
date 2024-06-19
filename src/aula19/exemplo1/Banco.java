@@ -1,8 +1,8 @@
-package exemplos.exemplo1;
+package aula19.exemplo1;
 import java.util.Scanner;
 class Banco
 {
-    public static void main(String[] args)
+    public static void main(String args[])
     {
         Scanner ler = new Scanner(System.in);
 
@@ -65,7 +65,7 @@ class Banco
                 {
                     System.out.println("Nome: "+listaContas[aux].titular+" ");
                     System.out.println("Id: "+listaContas[aux].identificador);
-                    System.out.println("Média: "+listaContas[aux].saldo);
+                    System.out.println("Saldo: "+listaContas[aux].saldo);
 
                 }
 
