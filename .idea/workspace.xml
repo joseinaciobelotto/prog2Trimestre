@@ -4,16 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="55d1d429-c16e-4112-895f-2f8ac85723c3" name="Changes" comment="Criando o projeto">
-      <change afterPath="$PROJECT_DIR$/src/aula20/exemplo1/ContaTeste2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/aula20/exemplo1/Operações.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/aula20/exemplo1/Teste.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/aula20/exemplo2/Pessoa.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/aula20/exemplo2/testeAcesso.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/exemplos/exemplo1/Banco.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/aula19/exemplo1/Banco.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/exemplos/exemplo1/Conta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/aula19/exemplo1/Conta.java" afterDir="false" />
-    </list>
+    <list default="true" id="55d1d429-c16e-4112-895f-2f8ac85723c3" name="Changes" comment="Criando o projeto" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

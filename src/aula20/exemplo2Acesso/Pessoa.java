@@ -1,4 +1,4 @@
-package aula20.exemplo2;
+package aula20.exemplo2Acesso;
 
 public class Pessoa {
 

@@ -1,6 +1,4 @@
-package aula20.exemplo2;
-
-import aula20.exemplo2.Pessoa;
+package aula20.exemplo2Acesso;
 
 public class testeAcesso
 {

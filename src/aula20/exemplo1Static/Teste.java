@@ -1,4 +1,4 @@
-package aula20.exemplo1;
+package aula20.exemplo1Static;
 
 public class Teste {
 
