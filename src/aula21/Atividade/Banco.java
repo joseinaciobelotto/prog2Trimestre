@@ -1,4 +1,4 @@
-package aula21.exemploEncapsulamentoDois;
+package aula21.Atividade;
 
 public class Banco {
 

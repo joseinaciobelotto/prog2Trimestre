@@ -1,16 +1,16 @@
-package aula21.exemploEncapsulamentoDois;
+package aula21.Atividade;
 
 import java.util.Random;
 
 public class Conta {
 
 
-    private float saldo;
+    protected float saldo;
     private String identificador;
-    String titular;
+    private String titular;
     private String senha;
 
-    Conta(String titular, String senha)
+    public Conta(String titular, String senha)
     {
      this.titular = titular;
      this.senha = senha;
@@ -46,6 +46,7 @@ public class Conta {
 
     void depositar(float valor)
     {
+
         saldo+=valor;
     }
 
@@ -67,7 +68,7 @@ public class Conta {
 
     public String verificarSaldo()
     {
-        return String.format("Seu saldo é de R$%.2f");
+        return String.format("Seu saldo é de R$"+saldo);
     }
 
 
