@@ -6,7 +6,7 @@ public class ContaPoupança extends Conta {
 
 
 
-    public ContaPoupança(String titular, String senha, float depositar)
+    public ContaPoupança(String titular, String senha)
     {
         super(titular,senha);
 

@@ -18,15 +18,17 @@ public class Conta {
     }
 
     public String getIdentificador() {
-        return identificador;
-    }
-    public void setIdentificador(String titular) {
-        this.titular = titular;
+        return this.identificador;
     }
 
 
-    public void setSenha(String senha) {
-        this.titular = titular;
+    public String getTitular() {
+        return this.titular;
+    }
+
+    public void setSenha(String senha)
+    {
+        this.senha = senha;
     }
 
 
@@ -34,13 +36,12 @@ public class Conta {
     private void geralIdentificador()
     {
         Random aleatorio = new Random();
+
         String identificador = "";
-        for(int i=0; i<4; i++)
-        {
-        identificador+=(char)aleatorio.nextInt(65,90);
-        }
+
         identificador+=aleatorio.nextInt(1000,2000);
-        this.identificador += identificador;
+System.out.println( "Seu identificador é "+identificador);
+        this.identificador = identificador;
 
     }
 
@@ -70,6 +71,7 @@ public class Conta {
     {
         return String.format("Seu saldo é de R$"+saldo);
     }
+
 
 
 

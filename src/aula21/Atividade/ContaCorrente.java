@@ -9,7 +9,7 @@ public class ContaCorrente extends Conta {
     public ContaCorrente(String titular, String senha, float limite)
     {
      super(titular,senha);
-
+    this.limite = limite;
     };
 
     public boolean sacar (float valor)
@@ -26,6 +26,7 @@ public class ContaCorrente extends Conta {
         }
         else
         {
+            System.out.println("Limite e saldo insuficiente!");
             return false;
         }
     }
