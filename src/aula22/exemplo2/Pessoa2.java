@@ -1,7 +1,7 @@
 package aula22.exemplo2;
 
 
-public class Pessoa2 {
+ class Pessoa2 {
 
     public String nome;
 
