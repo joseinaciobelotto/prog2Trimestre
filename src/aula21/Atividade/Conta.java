@@ -1,8 +1,9 @@
 package aula21.Atividade;
 
+import java.io.Serializable;
 import java.util.Random;
 
-public class Conta {
+public class Conta implements Serializable {
 
 
     protected float saldo;
@@ -40,7 +41,7 @@ public class Conta {
         String identificador = "";
 
         identificador+=aleatorio.nextInt(1000,2000);
-System.out.println( "Seu identificador é "+identificador);
+        System.out.println( "Seu identificador é "+identificador);
         this.identificador = identificador;
 
     }

@@ -1,5 +1,8 @@
 package aula21.Atividade;
 
+import aula22.exemploArquivos.Pessoa;
+
+import java.io.*;
 import java.util.Scanner;
 
 public class Banco {
@@ -8,24 +11,125 @@ public class Banco {
     public static ContaCorrente[] listaContasCorrente = new ContaCorrente[100];
     public static  int auxContCorrente = 0;
     public static  int auxContPoupança = 0;
+
+    public static int numeroContasCorrente = 0;
+    public static int numeroContasPoupança = 0;
+
     public static void main(String[] args)
     {
+
+        File path = new File("C:/Users/C313/Documents/listaContas/");
+        File path2 = new File("C:/Users/C313/Documents/listaContas/");
+
+        if(path.exists())
+        {
+            System.out.println("O caminho existe!");
+        }else
+        {
+            System.out.println("O caminho não existe, tantando criar...");
+            path.mkdirs();
+        }
+
+        if(path2.exists())
+        {
+            System.out.println("O caminho existe!");
+        }else
+        {
+            System.out.println("O caminho não existe, tantando criar...");
+            path2.mkdirs();
+        }
 
 
 
         do {
             char acao;
             do {
+
+
+                File arquivoContaCorrente = new File(path,"contasCorrente");
+                File arquivoContaPoupança = new File(path2,"contasPoupança");
+
+
+
+                    try {
+                        ObjectInputStream correnteLeituraObj = new ObjectInputStream(new FileInputStream(arquivoContaCorrente.getAbsolutePath()));
+
+                        listaContasCorrente = (ContaCorrente[]) correnteLeituraObj.readObject();
+
+
+                    } catch (FileNotFoundException erro) {
+                        System.out.println("Erro ao ler o arquivo33!");
+                    } catch (IOException erro) {
+                        System.out.println("Erro ao ler as informações!");
+                    } catch (ClassNotFoundException erro) {
+                        System.out.println("Classe não encontrada");
+                    }
+
+
+
+                try
+                {
+                   ObjectInputStream poupançaLeituraObj = new  ObjectInputStream(new FileInputStream(arquivoContaPoupança.getAbsolutePath()));
+
+                       listaContasPoupança =  (ContaPoupança[]) poupançaLeituraObj.readObject();
+
+
+
+
+
+                }
+                catch (FileNotFoundException erro)
+                {
+                    System.out.println("Erro ao ler o arquivo44!");
+                }
+                catch (IOException erro)
+                {
+                    System.out.println("Erro ao ler as informações!");
+                }
+                catch (ClassNotFoundException erro)
+                {
+                    System.out.println("Classe não encontrada");
+                }
+
+
+
+
+                for(int aux = 0 ; listaContasPoupança[aux] != null ; aux++)
+                {
+                    if(listaContasPoupança[aux]!= null)
+                    {
+                        auxContPoupança++;
+
+
+
+                    }
+                }
+
+                for(int aux = 0 ; listaContasCorrente[aux] != null ; aux++)
+                {
+                    if(listaContasCorrente[aux]!= null)
+                    {
+                        auxContCorrente++;
+
+                    }
+                }
+
+
+
+
                 System.out.println("c - criar conta ");
                 System.out.println("a - acessar conta");
                 System.out.println("l - listar contas");
+                System.out.println("s - salvar contas");
                 acao = ler.next().toLowerCase().charAt(0);
-            }while  (acao != 'c' && acao != 'a' && acao != 'l');
+            }while  (acao != 'c' && acao != 'a' && acao != 'l'  && acao != 's');
 
-            if(acao =='c') {
+            if(acao =='c')
+            {
 
                 char  tipoConta;
                 do {
+
                     System.out.println("c - criar conta corrente");
                     System.out.println("p - criar conta poupança");
 
@@ -60,7 +164,8 @@ public class Banco {
 
                 System.out.println("");
             }
-            if(acao =='a')
+
+           else if(acao =='a')
             {
 
                 char  tipoConta;
@@ -73,13 +178,16 @@ public class Banco {
 
                 acessarTiposConta(tipoConta);
 
-                }
+
+            }
 
 
-            if(acao=='l')
+            else  if(acao=='l')
             {
                 if(auxContCorrente>0) {
                     System.out.println("Contas Corrente: ");
+
+
                     for (int aux = 0; aux < auxContCorrente; aux++) {
                         System.out.println("Nome: " + listaContasCorrente[auxContCorrente].getTitular() + " ");
                         System.out.println("Id: " + listaContasCorrente[auxContCorrente].getIdentificador());
@@ -98,9 +206,63 @@ public class Banco {
 
                 }}
 
+
             }
+
+            else if(acao=='s')
+            {
+                File arquivoContaCorrente = new File(path,"contasCorrente");
+                File arquivoContaPoupança = new File(path2,"contasPoupança");
+                try
+                {
+                ObjectOutputStream objectCorrente = new ObjectOutputStream(new FileOutputStream(arquivoContaCorrente.getAbsolutePath()));
+
+                objectCorrente.writeObject(listaContasCorrente);
+                objectCorrente.close();
+
+                System.out.println("Salvo com sucesso!");
+            }
+              catch (FileNotFoundException erro)
+            {
+                System.out.println("Erro ao ler o arquivo11!");
+            }
+              catch (IOException erro)
+            {
+                System.out.println("Erro ao gravar as informações!");
+            }
+
+            try
+            {
+                ObjectOutputStream objectPoupança = new ObjectOutputStream(new FileOutputStream(arquivoContaPoupança.getAbsolutePath()));
+
+                objectPoupança.writeObject(listaContasPoupança);
+
+                objectPoupança.close();
+                System.out.println("Salvo com sucesso!");
+            }
+            catch (FileNotFoundException erro)
+            {
+                System.out.println("Erro ao ler o arquivo22!");
+            }
+            catch (IOException erro)
+            {
+                System.out.println("Erro ao gravar as informações!");
+            }
+
+
+
+
+        }
+
         }while (true);
+
+
+
+
+
+
     }
+
 
  static void  acessarTiposConta(char tipo)
 {
